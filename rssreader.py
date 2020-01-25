@@ -10,7 +10,6 @@ RSS Reader Plugin for xrel
 """
 
 import requests
-from bs4 import BeautifulSoup
 import feedparser
 
 def getRSSTitles(url):
