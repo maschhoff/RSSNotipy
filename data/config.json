@@ -1,0 +1,10 @@
+{
+    "port":3247,
+    "updatetime":1800,
+    "requester":["Harald","Ilse"],
+    "quality":["720p","1080p","2160p"],
+    "date":["2017","2018","2019","2020","2021","2022"],
+    "rss":{
+        "xREL":"https://www.xrel.to/feeds/atom/releases-movie-topmovie.xml"
+    }
+}

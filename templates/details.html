@@ -1,0 +1,44 @@
+
+
+
+{% extends "layout.html" %}
+{% block content %}
+	
+
+	<article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{movie["request"]}}</a>
+              <small class="text-muted"></small>
+            </div>
+           <!-- <h2><a class="article-title" href="#">{{ movie }}</a></h2> -->
+         <!--   <p class="article-content">-->
+      <div>
+        
+        <h5>{{movie["film"]+" "+movie["date"]+" "+movie["quality"]}}</h5>
+
+      <ul>
+      {% for url in movie["urls"] %}
+      <li><a href={{url}} target="_blank">{{ url }}</a></li>
+      {% endfor %}
+    </ul>
+
+  </div>
+  
+
+
+     <!-- </p> -->
+      
+
+    
+
+          </div>
+
+
+		  <div>
+			<a href="/del/{{movie["id"]}}">  <ion-icon ios="ios-close" md="md-close"></ion-icon></a>
+		  <div>
+        </article>
+		
+	
+{% endblock content %}
