@@ -36,6 +36,7 @@ def rel(title):
 	return render_template('relsource.html', config=config, source=title, movies=movies)
 
 
+#TODO - not implemented jet
 @app.route('/<string:search>')
 def search(search):
 	xrel_movies=rssreader.getRSSTitles("https://www.xrel.to/feeds/atom/releases-movie-topmovie.xml")
@@ -54,7 +55,7 @@ def detailsData(id):
 def deleteData(id):
 	searchfile.deleteData(id)
 	search=searchfile.loadSearchfile()
-	return render_template('liste.html', config=config, message="Film wurde gelöscht" ,movies=search)
+	return render_template('liste.html', config=config, message="Movie has been deleted" ,movies=search)
 
 
 @app.route('/refresh')
@@ -75,7 +76,7 @@ def my_form_post():
 	requester = request.form['requester']
 	searchfile.createData(film,mdate,quality,requester,False,[])
 	search=searchfile.loadSearchfile()
-	return render_template('liste.html', config=config, message="Film wurde hinzugefügt "+film , movies=search)
+	return render_template('liste.html', config=config, message="Movie was added "+film , movies=search)
 
 def rss_cron():
 	while True:
