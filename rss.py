@@ -36,6 +36,13 @@ def rel(title):
 	return render_template('relsource.html', config=config, source=title, movies=movies)
 
 
+@app.route('/movies/<string:title>')
+def movies(title):
+	rss=config["movies"]
+	url=rss[title]
+	movies=rssreader.getRSSTitles(url)
+	return render_template('relsource.html', config=config, source=title, movies=movies)
+
 #TODO - not implemented jet
 @app.route('/<string:search>')
 def search(search):

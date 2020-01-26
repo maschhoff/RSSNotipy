@@ -18,17 +18,17 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">RSS Notipy</a> 
+          <a class="navbar-brand mr-4" href="/"><ion-icon name="logo-rss"></ion-icon> Notipy</a> 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="/">Wish list</a>
+              <a class="nav-item nav-link" href="/"><ion-icon name="cloud-outline"></ion-icon> Wish list</a>
               
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Release</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><ion-icon name="logo-rss"></ion-icon> Release Source</a>
               <div class="dropdown-menu">
 
                 {% for item in config["rss"] %}
@@ -36,12 +36,26 @@
             {% endfor %}
           
               </div>
+
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><ion-icon name="film"></ion-icon> Movies</a>
+              <div class="dropdown-menu">
+
+                {% for item in config["movies"] %}
+              <a class="dropdown-item" href="/movies/{{item}}">{{item}}</a>
+            {% endfor %}
+          
+              </div>
+
             </li>
 
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="/refresh"><ion-icon name="refresh"></ion-icon></a>
+              <a class="nav-item nav-link" href="https://github.com/maschhoff/RSSNotipy" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
             <!--  <a class="nav-item nav-link" href="/settings"><ion-icon name="settings"></ion-icon></a>-->
             </div>
           </div>
@@ -114,6 +128,7 @@
         </div>
       </div>
     </main>
+
 
 
     <!-- Optional JavaScript -->

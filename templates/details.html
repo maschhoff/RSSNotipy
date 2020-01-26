@@ -15,7 +15,9 @@
          <!--   <p class="article-content">-->
       <div>
         
-        <h5>{{movie["film"]+" "+movie["date"]+" "+movie["quality"]}}</h5>
+        <h5>{{movie["film"]}}</h5>
+      <kbd>{{movie["date"]}}</kbd> 
+      <kbd>{{movie["quality"]}}</kbd>
 
       <ul>
       {% for url in movie["urls"] %}
