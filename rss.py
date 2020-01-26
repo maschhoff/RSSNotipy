@@ -46,9 +46,9 @@ def movies(title):
 #TODO - not implemented jet
 @app.route('/<string:search>')
 def search(search):
-	xrel_movies=rssreader.getRSSTitles("https://www.xrel.to/feeds/atom/releases-movie-topmovie.xml")
-	res = [i for i in xrel_movies if search in i]
-	return render_template('relsource.html', source="xREL", movies=xrel_movies)    
+	movies=rssreader.getRSSTitles("")
+	res = [i for i in movies if search in i]
+	return render_template('relsource.html', source="", movies=movies)    
 	
 
 @app.route('/details/<string:id>')
