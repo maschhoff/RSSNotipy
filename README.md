@@ -11,6 +11,8 @@ It will let you configure movies sources to let you get notipyed when the movie 
 * python3 -m pip install -r requirements.txt
 * python3 rss.py
 
+## Run as docker
+* docker pull knex666/rssnotipy
 
 # Sample Configuration
 
