@@ -19,6 +19,7 @@ It will let you configure movies sources to let you get notipyed when the movie 
 # Sample Configuration
 
 
+```json
 {
     "port":3247, #Port http://127.0.0.1:3247 to connect to Notipy 
     "updatetime":1800, #Update interval default 2h 
@@ -32,5 +33,6 @@ It will let you configure movies sources to let you get notipyed when the movie 
     "movies":{ #List with RSS Movie Information - like IMDB, TMDB; 
         "Kino.de NEU":"https://www.kino.de/rss/neu-im-kino" 
 } 
+```
 
 
