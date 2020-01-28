@@ -10,6 +10,7 @@ use it with crontab or in a thread every ~ 2h (see config)
 
 """
 
+
 import searchfile
 import rssreader
 import collections
@@ -39,8 +40,7 @@ def run():
 			#print(movie+"\t"+link)
 			split=movie.split("20")
 
-			if similar(film["film"],split[0]) > 0.5:
-				if film["quality"] in movie:
+			if similar(film["film"],split[0]) > 0.5 and film["quality"] in movie and film["data"] in movie:
 					#print("GEFUNDEN: "+movie+"\t"+link)
 					film["listed"]=True
 					if not link in film["urls"]:
