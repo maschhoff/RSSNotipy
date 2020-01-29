@@ -54,8 +54,21 @@ def loadSearchfile():
 	except:
 		print("Seachfile empty")
 	#print(str(res))
-	return res
+	#sort Video
+	return sortList(res)
 
+def sortList(list):
+	#Sort Searchfile list
+	posList=[]
+	negList=[]
+	for element in list:
+		if element["listed"]:
+			posList.append(element)
+		else:
+			negList.append(element)
+	
+	res=posList+negList
+	return res
 
 def writeSearchfile(search):
 	#print("writeSearchfile()")
