@@ -75,10 +75,10 @@ def refreshing():
 def my_form_post():
 	film = request.form['film']
 	mdate = request.form['date']
-	if "beliebig" in mdate:
+	if "any" in mdate:
 		mdate=""
 	quality = request.form['quality']
-	if "beliebig" in quality:
+	if "any" in quality:
 		quality=""
 	requester = request.form['requester']
 	searchfile.createData(film,mdate,quality,requester,False,[])
