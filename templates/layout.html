@@ -104,7 +104,7 @@
   <div class="form-group">
     <label for="jahr">Year:</label>
     <select class="form-control" name="date">
-      <option>beliebig</option>
+      <option>any</option>
       {% for item in config["date"] %}
         <option {%if item=="2020"%}selected="true"{% endif %}>{{item}}</option>
       {% endfor %}
@@ -113,7 +113,7 @@
   <div class="form-group">
     <label for="Qualitaet">Quality:</label>
     <select class="form-control" name="quality">
-      <option>beliebig</option>
+      <option>any</option>
       {% for item in config["quality"] %}
         <option>{{item}}</option>
       {% endfor %}
