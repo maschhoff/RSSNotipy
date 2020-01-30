@@ -38,13 +38,36 @@ def run():
 
 		for movie, link in x_movies.items():
 			#print(movie+"\t"+link)
+			#Split on year
 			split=movie.split("20")
 
+			#to lowercase without . and spaces
+			lmovie=movie.lower()
+			lfilm=film["film"].lower()
+			lmovie=lmovie.replace(".","")
+			lmovie=lmovie.replace(" ","")
+			lfilm=lfilm.replace(".","")
+			lfilm=lfilm.replace(" ","")
+
+			#result
+			gefunden=False
+
+			#method1 - found by substring in string
+			if lfilm in lmovie and film["quality"] in movie and film["date"] in movie:
+				#print("METHOD1: "+lfilm+"\t"+lmovie)
+				gefunden=True
+
+			#method2 - found by similary in percent
 			if similar(film["film"],split[0]) > 0.5 and film["quality"] in movie and film["date"] in movie:
-					#print("GEFUNDEN: "+movie+"\t"+link)
-					film["listed"]=True
-					if not link in film["urls"]:
-						film["urls"].append(link)
+				#print("METHOD2: "+movie)
+				gefunden=True
+			
+			
+			if gefunden:
+				#print("GEFUNDEN: "+movie+"\t"+link)
+				film["listed"]=True
+				if not link in film["urls"]:
+					film["urls"].append(link)
 	searchfile.writeSearchfile(search)
 
 #run()
