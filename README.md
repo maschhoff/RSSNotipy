@@ -26,9 +26,9 @@ You can add pushover and soon other notification services to get a push notifica
 {
     "port":3247, 
     "updatetime":1800, 
-    "requester":["Harald","Ilse"], 
     "pushover_app_token":"Your API Key",
     "pushover_user_key":"Your User Key",
+    "requester":["Harald","Ilse"], 
     "quality":["720p","1080p","2160p"], 
     "date":["2017","2018","2019","2020","2021","2022"],
     "rss":{   
