@@ -16,22 +16,15 @@ import rssreader
 import collections
 from difflib import SequenceMatcher
 import settings
-import http.client, urllib
+import noti
+
 
 config=settings.loadConfig()
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
-def notifyPushover(movie):
-	conn = http.client.HTTPSConnection("api.pushover.net:443")
-	conn.request("POST", "/1/messages.json",
-	urllib.parse.urlencode({
-    "token": config["pushover_app_token"],
-    "user": config["pushover_user_key"],
-    "message": "New Movie found: "+movie,
-  	}), { "Content-type": "application/x-www-form-urlencoded" })
-	conn.getresponse()
+
 
 def run():	
 	print("... Running Cron RSS ...")
@@ -78,8 +71,8 @@ def run():
 			if gefunden:
 				#print("GEFUNDEN: "+movie+"\t"+link)
 				#Notify
-				if not film["listed"] and config.get("pushover_app_token") is not None or config.get("pushover_app_token")=="":
-					notifyPushover(film["film"])
+				if not film["listed"]:
+					noti.notifyAll(film["film"])
 
 				#Change and save
 				film["listed"]=True
