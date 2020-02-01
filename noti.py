@@ -2,8 +2,6 @@
 
 RSS Notipy
 
-RSS Serach Cronjob file
-
 Notification Services
 
 2020 maschhoff github.com/maschhoff
