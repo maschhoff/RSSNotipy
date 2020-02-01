@@ -25,6 +25,8 @@ It will let you configure movies sources to let you get notipyed when the movie 
     "port":3247, 
     "updatetime":1800, 
     "requester":["Harald","Ilse"], 
+    "pushover_app_token":"Your API Key",
+    "pushover_user_key":"Your User Key",
     "quality":["720p","1080p","2160p"], 
     "date":["2017","2018","2019","2020","2021","2022"],
     "rss":{   
