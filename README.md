@@ -3,6 +3,8 @@
 RSS Notipy is a search and notification service build in python.
 It will let you configure movies sources to let you get notipyed when the movie is out on dvd.
 
+You can add pushover and soon other notification services to get a push notification.
+
 ![Wish list](https://i.ibb.co/ynrnt56/1.png)
 ![Movies](https://i.ibb.co/MNfhBVJ/2.png)
 
