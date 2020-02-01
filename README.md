@@ -24,6 +24,7 @@ You can optionally add the following notification services:
 
 # Sample Configuration
 
+Please note that all push notification services are optinal and can be empty or left.
 
 ```json
 {
