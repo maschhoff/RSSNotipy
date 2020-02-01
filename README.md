@@ -26,8 +26,11 @@ You can add pushover and soon other notification services to get a push notifica
 {
     "port":3247, 
     "updatetime":1800, 
+    "pushbullet_api_key":"Your API Key",
     "pushover_app_token":"Your API Key",
     "pushover_user_key":"Your User Key",
+    "openhab_ip":"192.168.100.12 Your openHAB IP",
+    "openhab_port":"8080 openHAB port",
     "requester":["Harald","Ilse"], 
     "quality":["720p","1080p","2160p"], 
     "date":["2017","2018","2019","2020","2021","2022"],
