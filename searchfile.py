@@ -77,8 +77,3 @@ def writeSearchfile(search):
 		
 	
 	
-
-#createData("Rambo","2019","1080p","Matze",False,None)
-#search=loadSearchfile()
-#print(search[1]["film"])
-#deleteData(94688)
