@@ -14,6 +14,6 @@
         "Moviepilot.de DVD":"http://rss.filmstarts.de/fs/dvd/baldige"
     },
     "movies":{
-        "Kino.de NEU":"https://www.kino.de/rss/neu-im-kino"
+        "Filmstarts.de NEU":"http://rss.filmstarts.de/fs/kinos/bald?format=xml"
     }
 }
