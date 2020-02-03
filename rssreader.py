@@ -14,9 +14,13 @@ import feedparser
 
 def getRSSTitles(url):
     feed = feedparser.parse(url)
-    movie={}
-    
+    movie={}    
     for item in feed["items"]:
         movie[item["title"]]=item["link"]
 
     return movie
+
+
+def getMovieTitles(url):
+    feed = feedparser.parse(url)
+    return feed["items"]

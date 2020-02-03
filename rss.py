@@ -40,15 +40,17 @@ def rel(title):
 def movies(title):
 	rss=config["movies"]
 	url=rss[title]
-	movies=rssreader.getRSSTitles(url)
-	return render_template('relsource.html', config=config, source=title, movies=movies)
+	movies=rssreader.getMovieTitles(url)
+	return render_template('movies.html', config=config, source=title, movies=movies)
 
 #TODO - not implemented jet
+"""
 @app.route('/<string:search>')
 def search(search):
 	movies=rssreader.getRSSTitles("")
 	res = [i for i in movies if search in i]
 	return render_template('relsource.html', source="", movies=movies)    
+"""
 	
 
 @app.route('/details/<string:id>')
@@ -119,4 +121,4 @@ if __name__ == '__main__':
 
 	""")
 
-	app.run(host='0.0.0.0',port=config["port"],debug=False)
+	app.run(host='0.0.0.0',port=config["port"],debug=True)
