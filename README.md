@@ -43,7 +43,7 @@ Please note that all push notification services are optinal and can be empty or 
         "Filmstarts.de DVD":"http://rss.filmstarts.de/fs/dvd/Neue" 
     }, 
     "movies":{ 
-        "Kino.de NEU":"https://www.kino.de/rss/neu-im-kino" 
+        "Filmstarts.de NEU":"http://rss.filmstarts.de/fs/kinos/bald?format=xml" 
 } 
 ```
 
