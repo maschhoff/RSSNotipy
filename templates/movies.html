@@ -1,0 +1,43 @@
+
+
+
+{% extends "layout.html" %}
+{% block content %}
+      <!--  <div>
+      <p>{{ message }}</p>
+      <p>Search Results for "{{ search }}":</p>
+      <p>{% for res in results %}
+            <li>{{ res }}</li>
+            {% endfor %}</p>
+        <p>Movies:</p>
+        <ul>
+            {% for movie in movies %}
+            <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    </div> -->
+	
+	{% for movie in movies %}
+	<article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ source }}</a>
+              <small class="text-muted"></small>
+            </div>
+           <!-- <h2><a class="article-title" href="#">{{ movie }}</a></h2> -->
+            <p class="article-content">
+            <h5>{{ movie["title"] }}</h5>
+            {% if (movie["links"])[1] %}
+            <img src="{{(movie["links"])[1].get("href")}}" width="300px"></img>
+            {% endif %}
+        
+          </p>
+          {{movie["description"]|safe}}<br/><br/>
+            <a href={{movie["link"]}} target="_blank"><ion-icon name="arrow-dropright-circle"></ion-icon></a>
+          
+          </div>
+        </article>
+		
+	{% endfor %}
+	
+{% endblock content %}
