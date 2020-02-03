@@ -76,16 +76,21 @@ def refreshing():
 @app.route('/', methods=['POST'])
 def my_form_post():
 	film = request.form['film']
-	mdate = request.form['date']
-	if "any" in mdate:
-		mdate=""
-	quality = request.form['quality']
-	if "any" in quality:
-		quality=""
-	requester = request.form['requester']
-	searchfile.createData(film,mdate,quality,requester,False,[])
+	if film!="":
+		mdate = request.form['date']
+		if "any" in mdate:
+			mdate=""
+		quality = request.form['quality']
+		if "any" in quality:
+			quality=""
+		requester = request.form['requester']
+		searchfile.createData(film,mdate,quality,requester,False,[])
 	search=searchfile.loadSearchfile()
-	return render_template('liste.html', config=config, message="Movie was added "+film , movies=search)
+	if film!="":
+		return render_template('liste.html', config=config, message="Movie was added "+film , movies=search)
+	else:
+		return render_template('liste.html', config=config, message="Error: Movietitle was empty" , movies=search)
+
 
 def rss_cron():
 	while True:
@@ -121,4 +126,4 @@ if __name__ == '__main__':
 
 	""")
 
-	app.run(host='0.0.0.0',port=config["port"],debug=True)
+	app.run(host='0.0.0.0',port=config["port"],debug=False)
