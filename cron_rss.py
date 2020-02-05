@@ -17,6 +17,7 @@ import collections
 from difflib import SequenceMatcher
 import settings
 import noti
+import re
 
 
 config=settings.loadConfig()
@@ -49,10 +50,8 @@ def run():
 			#to lowercase without . and spaces
 			lmovie=movie.lower()
 			lfilm=film["film"].lower()
-			lmovie=lmovie.replace(".","")
-			lmovie=lmovie.replace(" ","")
-			lfilm=lfilm.replace(".","")
-			lfilm=lfilm.replace(" ","")
+			lmovie = (" ".join(re.findall(r"[A-Za-z0-9]*", lmovie))).replace(" ","")
+			lfilm = (" ".join(re.findall(r"[A-Za-z0-9]*", lfilm))).replace(" ","")
 
 			#result
 			gefunden=False
@@ -63,7 +62,7 @@ def run():
 				gefunden=True
 
 			#method2 - found by similary in percent
-			if similar(film["film"],split[0]) > 0.5 and film["quality"] in movie and film["date"] in movie:
+			if similar(film["film"],split[0]) > 0.8 and film["quality"] in movie and film["date"] in movie:
 				#print("METHOD2: "+movie)
 				gefunden=True
 			
