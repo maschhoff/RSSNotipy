@@ -47,4 +47,5 @@ Please note that all push notification services are optinal and can be empty or 
 } 
 ```
 
-
+### Test on Repl.it
+[![Run on Repl.it](https://repl.it/badge/github/maschhoff/RSSNotipy)](https://repl.it/github/maschhoff/RSSNotipy)
