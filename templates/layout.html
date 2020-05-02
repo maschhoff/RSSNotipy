@@ -11,6 +11,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
         <title>RSS Notipy</title>
+        
+        <style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 100px;
+        right: 0;
+        bottom: 100px;
+        left: 0;
+    }
+</style>
 
 
 </head>
@@ -55,6 +65,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="/refresh"><ion-icon name="refresh"></ion-icon></a>
+              <a class="nav-item nav-link" href="/settings"><ion-icon name="settings"></ion-icon></a>
               <a class="nav-item nav-link" href="https://github.com/maschhoff/RSSNotipy" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
             <!--  <a class="nav-item nav-link" href="/settings"><ion-icon name="settings"></ion-icon></a>-->
             </div>
@@ -137,5 +148,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    var editor = ace.edit('editor');
+        editor.session.setMode("ace/mode/json");
+        editor.setTheme("ace/theme/xcode");
+
+    var input = $('input[name="hiddenconfig"]');
+        editor.getSession().on("change", function () {
+        input.val(editor.getSession().getValue());
+    });
+</script> 
 </body>
 </html>

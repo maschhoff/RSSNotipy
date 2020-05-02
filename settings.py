@@ -9,25 +9,19 @@ settings - Helpers
 
 import json
 
+def getConfigRaw():
+	config_raw= open('./data/config.json', 'r')
+	return config_raw
+
 def loadConfig():
     #print("loadConfig()")
     res={}
     with open('./data/config.json', 'r') as fp:
         res = json.load(fp)
     return res
-
-#TODO - not used jet
-def createConfig(port,updatetime,requester,quality,date,rss):
-	data={}
-	data["port"]=port
-	data["updatetime"]=updatetime
-	data["requester"]=requester
-	data["quality"]=quality
-	data["date"]=date
-	data["rss"]=rss
-
-	writeConfig(data)    
+   
 
 def writeConfig(config):
-    with open('./data/config.json', 'w') as fp:
-	    json.dump(config, fp)
+	f = open("./data/config.json", "w")
+	f.write(config)
+	f.close()

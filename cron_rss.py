@@ -47,7 +47,7 @@ def run():
 			#Split on year
 			split=movie.split("20")
 
-			#to lowercase without . and spaces
+			#to lowercase without special characters and spaces
 			lmovie=movie.lower()
 			lfilm=film["film"].lower()
 			lmovie = (" ".join(re.findall(r"[A-Za-z0-9]*", lmovie))).replace(" ","")

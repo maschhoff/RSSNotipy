@@ -19,8 +19,6 @@ import cron_rss
 import settings
 
 app = Flask(__name__)
-config={}
-
 
 
 @app.route('/')
@@ -72,6 +70,20 @@ def refreshing():
 	cron_rss.run()
 	search=searchfile.loadSearchfile()
 	return render_template('liste.html', config=config, movies=search)
+	
+@app.route('/settings')
+def setting():
+	config_raw= settings.getConfigRaw()
+	return render_template('settings.html', config=config, config_raw=config_raw.read())
+
+@app.route('/settings', methods=['POST'])
+def setting_save():
+	config_raw=request.form['hiddenconfig']
+	settings.writeConfig(config_raw)
+	global config
+	config=settings.loadConfig()
+	#os.execl(sys.executable, sys.executable, *sys.argv)
+	return render_template('settings.html', config=config, config_raw=config_raw, message="config saved")
 
 @app.route('/', methods=['POST'])
 def my_form_post():
@@ -102,6 +114,7 @@ if __name__ == '__main__':
 	
 	#loadConfig
 	logging.info("load Config")
+	global config
 	config=settings.loadConfig()
 
 	#Cron Thread start
@@ -126,4 +139,4 @@ if __name__ == '__main__':
 
 	""")
 
-	app.run(host='0.0.0.0',port=config["port"],debug=False)
+	app.run(host='0.0.0.0',port=config["port"],debug=True)
