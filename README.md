@@ -47,4 +47,6 @@ Please note that all push notification services are optinal and can be empty or 
 } 
 ```
 
+# donate
+Buy me a Pizza -> https://www.buymeacoffee.com/maschhoff
 
