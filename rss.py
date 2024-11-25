@@ -125,18 +125,6 @@ if __name__ == '__main__':
 	#Server start
 	logging.info("Start RSS Notipy Server...")
 	print("Start RSS Notipy Server...")
-	print(""" 
-	
-	 (\__/)  .-  -.)
-	 /0 0 `./    .'
-	(O__,   \   (
-	  / .  . )  .
-	  |-| '-' \  )
-	  (   _(   ).'
-	°....~....$
-
-	  RSS Notipy
-
-	""")
-
 	app.run(host='0.0.0.0',port=config["port"],debug=True)
+
+	

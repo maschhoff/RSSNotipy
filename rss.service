@@ -1,0 +1,14 @@
+[Unit]
+Description=RSSNotipy
+After=network.target
+
+[Service]
+Environment="WORKDIR=/opt/rss"
+WorkingDirectory=/opt/rss
+Type=simple
+ExecStart=/usr/bin/python ./rss.py
+User=rss
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

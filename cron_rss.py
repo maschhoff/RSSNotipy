@@ -77,6 +77,6 @@ def run():
 				film["listed"]=True
 				if not link in film["urls"]:
 					film["urls"].append(link)
-	searchfile.writeSearchfile(search)
+				searchfile.writeSearchfile(search)
 
 #run()
