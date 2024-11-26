@@ -8,7 +8,7 @@
     "openhab_port":"",
     "requester":["Harald","Ilse"],
     "quality":["720p","1080p","2160p"],
-    "date":["2017","2018","2019","2020","2021","2022"],
+    "date":["2017","2018","2019","2020","2021","2022","2023","2024","2025"],
     "rss":{
         "Netflix":"https://www.vodspy.de/netflix/rss.xml",
         "Moviepilot.de DVD":"http://rss.filmstarts.de/fs/dvd/baldige"
