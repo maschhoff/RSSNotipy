@@ -19,7 +19,8 @@ import cron_rss
 import settings
 
 app = Flask(__name__)
-
+global config
+config=settings.loadConfig()
 
 @app.route('/')
 def index():
@@ -114,8 +115,6 @@ if __name__ == '__main__':
 	
 	#loadConfig
 	logging.info("load Config")
-	global config
-	config=settings.loadConfig()
 
 	#Cron Thread start
 	th = threading.Thread(target=rss_cron)
